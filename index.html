@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Dlcircularprogress by TheDarkCode</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Dlcircularprogress</h1>
+        <p>A circular progress view with gradients written in Swift</p>
+
+        <p class="view"><a href="https://github.com/TheDarkCode/DLCircularProgress">View the Project on GitHub <small>TheDarkCode/DLCircularProgress</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/TheDarkCode/DLCircularProgress/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/TheDarkCode/DLCircularProgress/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/TheDarkCode/DLCircularProgress">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="kdcircularprogress" class="anchor" href="#kdcircularprogress" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>KDCircularProgress</h1>
+
+<p><code>KDCircularProgress</code> is a circular progress view written in Swift. It makes it possible to have gradients in the progress view, along with glows and animations. </p>
+
+<p>KDCircularProgress also has <code>IBInspectable</code> and <code>IBDesignable</code> support, so you can configure and preview inside the <code>Interface Builder</code>. </p>
+
+<p>Here's an example</p>
+
+<p><a href="http://youtu.be/iIdas72MXOg">Youtube Link</a></p>
+
+<p><img src="https://raw.githubusercontent.com/kaandedeoglu/KDCircularProgress/master/screenshot.gif" alt="Screenshot"></p>
+
+<p><img src="https://raw.githubusercontent.com/kaandedeoglu/KDCircularProgress/master/screenshot.png" alt="Screenshot">
+<img src="https://raw.githubusercontent.com/kaandedeoglu/KDCircularProgress/master/screenshot2.jpg" alt="Screenshot">
+<img src="https://raw.githubusercontent.com/kaandedeoglu/KDCircularProgress/master/screenshot3.jpg" alt="Screenshot">
+<img src="https://raw.githubusercontent.com/kaandedeoglu/KDCircularProgress/master/screenshot4.jpg" alt="Screenshot">
+<img src="https://raw.githubusercontent.com/kaandedeoglu/KDCircularProgress/master/screenshot5.jpg" alt="Screenshot">
+<img src="https://raw.githubusercontent.com/kaandedeoglu/KDCircularProgress/master/screenshot6.jpg" alt="Screenshot">
+<img src="https://raw.githubusercontent.com/kaandedeoglu/KDCircularProgress/master/screenshot7.jpg" alt="Screenshot"></p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> progress <span class="pl-k">=</span> KDCircularProgress(frame: CGRect(x: <span class="pl-c1">0</span>, y: <span class="pl-c1">0</span>, width: <span class="pl-c1">300</span>, height: <span class="pl-c1">300</span>))
+progress<span class="pl-k">.</span>startAngle <span class="pl-k">=</span> <span class="pl-c1">-90</span>
+progress<span class="pl-k">.</span>progressThickness <span class="pl-k">=</span> <span class="pl-c1">0</span><span class="pl-k">.</span><span class="pl-c1">2</span>
+progress<span class="pl-k">.</span>trackThickness <span class="pl-k">=</span> <span class="pl-c1">0</span><span class="pl-k">.</span><span class="pl-c1">7</span>
+progress<span class="pl-k">.</span>clockwise <span class="pl-k">=</span> <span class="pl-c1">true</span>
+progress<span class="pl-k">.</span>center <span class="pl-k">=</span> view<span class="pl-k">.</span>center
+progress<span class="pl-k">.</span>gradientRotateSpeed <span class="pl-k">=</span> <span class="pl-c1">2</span>
+progress<span class="pl-k">.</span>roundedCorners <span class="pl-k">=</span> <span class="pl-c1">true</span>
+progress<span class="pl-k">.</span>glowMode <span class="pl-k">=</span> <span class="pl-k">.</span>Forward
+progress<span class="pl-k">.</span>angle <span class="pl-k">=</span> <span class="pl-c1">300</span>
+progress<span class="pl-k">.</span>setColors(UIColor<span class="pl-k">.</span>cyanColor() ,UIColor<span class="pl-k">.</span>whiteColor(), UIColor<span class="pl-k">.</span>magentaColor())
+view<span class="pl-k">.</span>addSubview(progress)</pre></div>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<ul>
+<li>It's on CocoaPods under the name (you guessed it!) KDCircularProgress</li>
+<li>Just drag <code>KDCircularProgress.swift</code> into your project. <code>Carthage</code> support is on To-do list.</li>
+</ul>
+
+<h2>
+<a id="properties" class="anchor" href="#properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Properties</h2>
+
+<h4>
+<a id="progresscolors-uicolor" class="anchor" href="#progresscolors-uicolor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>progressColors: <code>[UIColor]</code>
+</h4>
+
+<p>The colors used to generate the gradient of the progress. You can also set this using the variadic <code>setColors(UIColor...)</code> method. A gradient is used only if there is more than one color. A fill is used otherwise. The default is a white fill.</p>
+
+<h4>
+<a id="angle-int" class="anchor" href="#angle-int" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>angle: <code>Int</code>
+</h4>
+
+<p>The angle of the progress. Between 0 and 360 (inclusive). Simply change its value in order to change the visual progress of the component. Default is 0.</p>
+
+<h4>
+<a id="startangle-int" class="anchor" href="#startangle-int" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>startAngle: <code>Int</code>
+</h4>
+
+<p>The angle at which the progress will begin. Between 0 and 360 (inclusive), however you can pass any negative or positive values and the component will mod them automatically to the required range. Default is 0.</p>
+
+<h4>
+<a id="clockwise-bool" class="anchor" href="#clockwise-bool" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>clockwise: <code>Bool</code>
+</h4>
+
+<p>Clockwise if true, Counter-clockwise if false. Default is true.</p>
+
+<h4>
+<a id="roundedcorners-bool" class="anchor" href="#roundedcorners-bool" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>roundedCorners: <code>Bool</code>
+</h4>
+
+<p>When true, the ends of the progress track will be drawn with a half circle radius. Default is false.</p>
+
+<h4>
+<a id="gradientrotatespeed-cgfloat" class="anchor" href="#gradientrotatespeed-cgfloat" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>gradientRotateSpeed: <code>CGFloat</code>
+</h4>
+
+<p>Describes how many times the underlying gradient will perform a 2π rotation for each full cycle of the progress. Integer values recommended. Default is 0.</p>
+
+<h4>
+<a id="glowamount-cgfloat" class="anchor" href="#glowamount-cgfloat" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>glowAmount: <code>CGFloat</code>
+</h4>
+
+<p>The intensity of the glow. Between 0 and 1.0. Default is 1.0.</p>
+
+<h4>
+<a id="glowmode-kdcircularprogressglowmode" class="anchor" href="#glowmode-kdcircularprogressglowmode" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>glowMode: <code>KDCircularProgressGlowMode</code>
+</h4>
+
+<ul>
+<li><p><strong>.Forward</strong> - The glow increases proportionaly to the angle. No glow at 0 degrees and full glow at 360 degrees.</p></li>
+<li><p><strong>.Reverse</strong> - The glow increases inversely proportional to the angle. Full glow at 0 degrees and no glow at 360 degrees.</p></li>
+<li><p><strong>.Constant</strong> - Constant glow.</p></li>
+<li><p><strong>.NoGlow</strong> - No glow</p></li>
+</ul>
+
+<p>The default is <strong>.Forward</strong></p>
+
+<h4>
+<a id="progressthickness-cgfloat" class="anchor" href="#progressthickness-cgfloat" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>progressThickness: <code>CGFloat</code>
+</h4>
+
+<p>The thickness of the progress. Between 0 and 1. Default is 0.4</p>
+
+<h4>
+<a id="trackthickness-cgfloat" class="anchor" href="#trackthickness-cgfloat" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>trackThickness: <code>CGFloat</code>
+</h4>
+
+<p>The thickness of the background track. Between 0 and 1. Default is 0.5</p>
+
+<h4>
+<a id="trackcolor-uicolor" class="anchor" href="#trackcolor-uicolor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>trackColor: <code>UIColor</code>
+</h4>
+
+<p>The color of the background track. Default is <code>UIColor.blackColor()</code>.</p>
+
+<h4>
+<a id="progressinsidefillcolor-uicolor" class="anchor" href="#progressinsidefillcolor-uicolor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>progressInsideFillColor: <code>UIColor</code>
+</h4>
+
+<p>The color of the center of the circle. Default is <code>UIColor.clearColor()</code>.</p>
+
+<h2>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Methods</h2>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">override</span> <span class="pl-k">public</span> <span class="pl-k">init</span>(frame: CGRect)</pre></div>
+
+<p>Initialize with a frame. Please only use square frames.</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">convenience</span> <span class="pl-k">public</span> <span class="pl-k">init</span>(frame:CGRect, colors: UIColor<span class="pl-k">...</span>)</pre></div>
+
+<p>Initialize with a frame and the gradient colors.</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">public</span> <span class="pl-k">func</span> <span class="pl-en">setColors</span>(colors: UIColor<span class="pl-k">...</span>)</pre></div>
+
+<p>Set the colors for the progress gradient.</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">public</span> <span class="pl-k">func</span> <span class="pl-en">animateFromAngle</span>(fromAngle: <span class="pl-c1">Int</span>, toAngle: <span class="pl-c1">Int</span>, duration: NSTimeInterval, relativeDuration: <span class="pl-c1">Bool</span> <span class="pl-k">=</span> <span class="pl-c1">true</span>, completion: ((<span class="pl-c1">Bool</span>) <span class="pl-k">-&gt;</span> <span class="pl-c1">Void</span>)?)</pre></div>
+
+<p>Animate the progress from an initial value to a final value, with a completion block that fires after the animation is done.</p>
+
+<p><code>relativeDuration</code> - specify if the duration is for the specific animation or is the duration that would make a full turn.</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">public</span> <span class="pl-k">func</span> <span class="pl-en">animateToAngle</span>(toAngle: <span class="pl-c1">Int</span>, duration: NSTimeInterval, completion: ((<span class="pl-c1">Bool</span>) <span class="pl-k">-&gt;</span> <span class="pl-c1">Void</span>)?)</pre></div>
+
+<p>Animate the progress from the current state to a target value.</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">public</span> <span class="pl-k">func</span> <span class="pl-en">pauseAnimation</span>()</pre></div>
+
+<p>Pause the animation, if any.</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">public</span> <span class="pl-k">func</span> <span class="pl-en">isAnimating</span>() <span class="pl-k">-&gt;</span> <span class="pl-c1">Bool</span></pre></div>
+
+<p>Check if there's an active animation.</p>
+
+<h2>
+<a id="misc" class="anchor" href="#misc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Misc</h2>
+
+<p>Prefering light colors in the gradients gives better results. As mentioned before, use square frames. Rectangular frames are not tested and might produce unexpected results.</p>
+
+<h2>
+<a id="to-do" class="anchor" href="#to-do" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To-Do</h2>
+
+<ul>
+<li>[x] Add example project</li>
+<li>[ ] Carthage Support</li>
+<li>[x] CocoaPods Support</li>
+<li>[x] IBDesignable/IBInspectable support</li>
+<li>[ ] Adding a <code>progress</code> property as an alternative to <code>angle</code>
+</li>
+<li>[ ] Clean up</li>
+</ul>
+
+<h2>
+<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h2>
+
+<p>Drop me an email if you want discuss anything further.</p>
+
+<p><a href="kaandedeoglu@me.com">Email</a></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2015 Kaan Dedeoglu</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/TheDarkCode">TheDarkCode</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
